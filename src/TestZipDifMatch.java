@@ -54,13 +54,13 @@ public class TestZipDifMatch {
 		if(result1 > 0){
 			oldFile = fileList[1];
 			newFile = fileList[0];
-			zipCnt1 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[1] + File.separator + "index.android.bundle");
-			zipCnt2 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[0] + File.separator + "index.android.bundle");
+			zipCnt1 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[1] + File.separator + Const.BUNDLE_NAME);
+			zipCnt2 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[0] + File.separator + Const.BUNDLE_NAME);
 		}else{
 			oldFile = fileList[0];
 			newFile = fileList[1];
-			zipCnt1 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[0] + File.separator + "index.android.bundle");
-			zipCnt2 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[1] + File.separator + "index.android.bundle");
+			zipCnt1 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[0] + File.separator + Const.BUNDLE_NAME);
+			zipCnt2 = FileStringReaderUtil.readContentFromFile(fileDir + fileList[1] + File.separator + Const.BUNDLE_NAME);
 		}
 
 
@@ -107,12 +107,12 @@ public class TestZipDifMatch {
 				zipCnt1)[0].toString();
 
 		// 将result写到压缩文件中
-		FileStringReaderUtil.writeContentInFile(result,  "src/resource/merge/index.android.bundle");
+		FileStringReaderUtil.writeContentInFile(result,  "src/resource/merge/" + Const.BUNDLE_NAME);
 
 
 
 		try {
-			String md5 = MD5Util.getMD5("src/resource/merge/index.android.bundle");
+			String md5 = MD5Util.getMD5("src/resource/merge/" + Const.BUNDLE_NAME);
 
 			InputStream is = new FileInputStream(new File("src/resource/diff" + File.separator + newFile + File.separator + "Detail.json"));
 			InputStreamReader streamReader = new InputStreamReader(is);
@@ -194,7 +194,7 @@ public class TestZipDifMatch {
 
 	private void mergePatAndAsset() {
 
-		String assetsBundle = FileStringReaderUtil.readContentFromFile(fileDir + "index.bundle");
+		String assetsBundle = FileStringReaderUtil.readContentFromFile(fileDir + Const.BUNDLE_NAME);
 		String patcheStr = FileStringReaderUtil.readContentFromFile(fileDir + "patchs.txt");
 		// 3.初始化 dmp
 		diff_match_patch dmp = new diff_match_patch();

@@ -3,12 +3,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+
 public class Main {
 
     public static void main(String[] args){
 
 
-        /*FileUtil.deleteCreateFile();
+        FileUtil.deleteCreateFile();
 
         //生成清单
 
@@ -53,7 +54,7 @@ public class Main {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }*/
+        }
 
         //生成压缩文件MD5
         try {

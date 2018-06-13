@@ -25,7 +25,7 @@ public class DetailUntil {
 
     private String fileDir = "src" + File.separator +"resource" + File.separator + "JSBundle" + File.separator;
     public void createDetail(String JSversion) throws IOException, NoSuchAlgorithmException {
-        String md5 = MD5Util.getMD5(fileDir + JSversion + File.separator + "index.android.bundle");
+        String md5 = MD5Util.getMD5(fileDir + JSversion + File.separator + Const.BUNDLE_NAME);
         String[] hdpi = new File(fileDir + JSversion + File.separator + HDPI).list();
         String[] mdpi = new File(fileDir + JSversion + File.separator + MDPI).list();
         String[] xhdpi = new File(fileDir + JSversion + File.separator + XHDPI).list();
